@@ -1,0 +1,265 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   AUTH LAYOUT
+   ═══════════════════════════════════════════════════════════════════════════ */
+.auth-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ── Left panel ─────────────────────────────────────────────────────────── */
+.auth-left {
+  flex: 1;
+  background: linear-gradient(135deg, #4F46E5 0%, #312E81 100%);
+  color: white;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-brand {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  z-index: 1;
+}
+
+.auth-tagline {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin-bottom: 3rem;
+  max-width: 400px;
+  z-index: 1;
+}
+
+.auth-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 1;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+}
+
+.feature-icon {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.auth-decorative {
+  position: absolute;
+  right: -100px;
+  bottom: -100px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+/* ── Right panel ────────────────────────────────────────────────────────── */
+.auth-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--bg-color);
+}
+
+/* ── Glassmorphism card ─────────────────────────────────────────────────── */
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 2.5rem 3rem 3rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.auth-card-heading {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+  transition: color 0.3s ease;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SEGMENTED LOGIN-TYPE SELECTOR
+   Two pill buttons inside a track. The active tab slides into place with
+   a background fill; colors shift when Admin is selected.
+   ═══════════════════════════════════════════════════════════════════════════ */
+.login-type-selector {
+  display: flex;
+  background: #F1F5F9;
+  border-radius: 10px;
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 1.75rem;
+  border: 1px solid #E2E8F0;
+}
+
+.login-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 7px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.22s ease, color 0.22s ease,
+              box-shadow 0.22s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.login-tab:hover:not(.login-tab--active) {
+  background: rgba(79, 70, 229, 0.06);
+  color: var(--primary);
+}
+
+/* ── Active: User tab (indigo) ──────────────────────────────────────────── */
+.login-tab--active {
+  background: #FFFFFF;
+  color: var(--primary);
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.18), 0 1px 3px rgba(0, 0, 0, 0.06);
+  transform: translateY(-0px);
+  font-weight: 600;
+}
+
+/* ── Active: Admin tab (deep indigo / dark) ─────────────────────────────── */
+.login-tab--admin.login-tab--active {
+  background: #1E1B4B;
+  color: #FFFFFF;
+  box-shadow: 0 2px 12px rgba(30, 27, 75, 0.35), 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+/* ── Admin submit button override ───────────────────────────────────────── */
+.btn-admin {
+  background: #1E1B4B !important;
+  transition: background 0.2s ease, transform 0.1s ease !important;
+}
+
+.btn-admin:hover {
+  background: #312E81 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FORMS
+   ═══════════════════════════════════════════════════════════════════════════ */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon .icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.input-with-icon input {
+  padding-left: 3rem;
+}
+
+.btn-full {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LINKS & HINTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+.auth-link {
+  display: block;
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.auth-link:hover {
+  color: var(--primary);
+}
+
+.auth-admin-hint {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  border-top: 1px solid #F1F5F9;
+  padding-top: 1rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ERROR / SUCCESS MESSAGES
+   ═══════════════════════════════════════════════════════════════════════════ */
+.auth-error {
+  background-color: #FEE2E2;
+  color: var(--critical);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+  border: 1px solid #FCA5A5;
+  line-height: 1.5;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .auth-left {
+    padding: 2rem;
+    flex: none;
+  }
+
+  .auth-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .login-type-selector {
+    margin-bottom: 1.25rem;
+  }
+}
