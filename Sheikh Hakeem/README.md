@@ -20,7 +20,7 @@ analytics, SLA tracking, and generated PDF reports.
 | --- | --- |
 | **Admin** | Everything — all tickets, user management, system health, audit logs, delete tickets, all reports |
 | **User** | Create/view their own tickets, upload attachments, comment, use the AI assistant, confirm AI-proposed drafts |
-| **Admin Registration Code**|  ITDESK-ADMIN-2024 |
+
 Password reset emails are logged to the backend console in dev (no SMTP
 configured); set `SMTP_*` env vars for production delivery.
 
